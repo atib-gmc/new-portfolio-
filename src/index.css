@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Minecraft";
+  src: url("./assets/font/Minecraft.ttf") format("truetype");
+}
+body {
+  font-family: "Minecraft", sans-serif;
+  background: #f6d4b1;
+  @apply selection:text-main-yellow selection:bg-main-dark/90;
+}
+input {
+  caret-shape: underscore;
+}
