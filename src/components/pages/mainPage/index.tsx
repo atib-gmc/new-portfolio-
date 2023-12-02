@@ -6,6 +6,7 @@ import Projects from "./Projects";
 
 const Main = () => {
   const [showMore, setShowMore] = useState(false);
+  document.title = "Welcome to my portfolio | Home ";
 
   return (
     <div className=" mx-auto   border-t-2 border-main-dark pt-8 border-dashed  w-full space-y-5">

@@ -1,6 +1,5 @@
 import CustomButton from "../Buttons/customBtnMain";
 import emailjs from "@emailjs/browser";
-
 import { zodResolver } from "@hookform/resolvers/zod";
 import Header from "../typoghrapy/Header";
 import { useForm, SubmitHandler } from "react-hook-form";
@@ -45,9 +44,8 @@ const Footer = () => {
         `${import.meta.env.VITE_PUBLIC_KEY}`
       )
       .then(
-        (response) => {
-          console.log("SUCCESS!", response.status, response.text);
-          setMessage("email sent successfully");
+        () => {
+          setMessage("success...");
           setLoading(false);
           setIsSuccess(true);
           popUp();
@@ -63,12 +61,13 @@ const Footer = () => {
       );
   };
   return (
-    <div className="w-full space-y-5 text-main-dark max-w-xl mx-auto text-center p-8">
+    <div className="w-full space-y-5 text-main-dark max-w-xl px-5 mx-auto text-center py-8">
       {/* <PopUp /> */}
       <AnimatePresence>
         {showPopUp && <PopUp isSuccess={isSuccess} message={message} />}
       </AnimatePresence>
       <form
+        id="contact"
         ref={form}
         onSubmit={handleSubmit(onSubmit)}
         className="flex flex-col gap-5 border-y-2 border-dashed border-main-dark py-8 "
@@ -100,7 +99,7 @@ const Footer = () => {
           <textarea
             {...register("message")}
             required
-            placeholder="messages"
+            placeholder="type your messages"
             name="message"
             id="message"
             className="bg-transparent placeholder-main-dark/70 selection:bg-main-dark/10 py-2 text-sm text-main-dark selection:text-main-yellow  focus:outline-none focus:border-b-[1px] w-full  border-main-dark"
@@ -113,7 +112,7 @@ const Footer = () => {
         </label>
         <CustomButton
           disabled={loading}
-          className="hover:scale-105  self-center"
+          className="hover:scale-105 disabled:cursor-disable  self-center"
         >
           {loading ? "sending. . ." : "submit"}
         </CustomButton>

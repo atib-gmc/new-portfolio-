@@ -1,8 +1,10 @@
-import { useNavigate } from "react-router-dom";
-import CustomButton from "../../Buttons/customBtnMain";
-// import StaticBtn from "../../Buttons/staticBtn";
+import { useEffect } from "react";
+import { AiFillHome } from "react-icons/ai";
 import ProjectCard, { Project } from "../../projectCard";
 import Header from "../../typoghrapy/Header";
+import CustomButton from "../../Buttons/customBtnMain";
+import { motion, AnimatePresence } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 const projects: Project[] = [
   {
@@ -34,22 +36,38 @@ const projects: Project[] = [
   },
 ];
 
-const Projects = () => {
+const OtherProject = () => {
   const navigate = useNavigate();
+  document.title = "My Portfolio | Other Projects";
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    // effect code
+    return () => {
+      // cleanup code
+    };
+  }, []);
+
   return (
-    <>
-      <hr className="divider my-8 border-t-2 border-dashed mx-auto  border-main-dark" />
-      <section id="projects">
-        <Header className="text-xl pt-[4px]">Projects</Header>
-      </section>
-      {projects.map((project, i) => (
-        <ProjectCard key={i} project={project} id={i} />
-      ))}
-      <CustomButton onClick={() => navigate("/projects")}>
-        More Projects
-      </CustomButton>
-    </>
+    <AnimatePresence>
+      <div className="w-full space-y-8 relative">
+        <motion.div
+          style={{ top: 16, left: 230, position: "fixed", zIndex: 99 }}
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          exit={{ scale: 0 }}
+          transition={{ duration: 0.3 }}
+        >
+          <CustomButton onClick={() => navigate("/")}>
+            <AiFillHome size={26} />
+          </CustomButton>
+        </motion.div>
+        <Header className="block mb-8 p-2">Other Projects</Header>
+        {projects.map((project, i) => (
+          <ProjectCard key={i} project={project} id={i} />
+        ))}
+      </div>
+    </AnimatePresence>
   );
 };
 
-export default Projects;
+export default OtherProject;

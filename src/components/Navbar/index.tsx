@@ -1,33 +1,28 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
+// import { useParams } from "react-router-dom";
 import {
-  AiFillFacebook,
   AiOutlineMenu,
   AiFillLinkedin,
   AiFillGithub,
+  AiOutlineWhatsApp,
 } from "react-icons/ai";
 import { motion } from "framer-motion";
 import CustomButton from "../Buttons/customBtnMain";
 
 const Navbar = () => {
+  // const navigate = useNavigate();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
-  // function scrollTo(target: string) {
-  //   const targetEl = document.getElementById(target);
-  //   window.scrollTo(targetEl);
-  // }
-  useEffect(() => {
-    const navbarEl = document.querySelector(".navbar");
-    const closeNavbar = (e: MouseEvent) => {
-      if ((e.target as HTMLElement).contains(navbarEl)) {
-        setIsDropdownOpen(false);
-      }
-    };
-    document.addEventListener("click", closeNavbar);
-    return () => document.removeEventListener("click", closeNavbar);
-  }, []);
+  function scrollTo(target: string) {
+    const targetElement = document.getElementById(target) as HTMLDivElement;
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
+      setIsDropdownOpen(false);
+    }
+  }
 
   return (
     <nav className="navbar fixed z-20  p-4 w-full">
@@ -58,7 +53,9 @@ const Navbar = () => {
                 "shadow-btn-hover  bg-main-yellow text-main-dark shadow-main-yellow"
               }`}
             >
-              <AiFillGithub size={26} />
+              <a href="https://github.com/adios35" target="_blank">
+                <AiFillGithub size={26} />
+              </a>
             </CustomButton>
           </div>
         </div>
@@ -69,30 +66,37 @@ const Navbar = () => {
             isDropdownOpen ? "w-screen " : "w-0 "
           } -top-4 -left-4 -z-10 duration-300 h-screen overflow-hidden`}
         >
-          <div className="h-full w-3/5 pt-36 md:pt-20  flex flex-col  md:[&>*]:h-36 [&>*]:h-20 bg-main-dark ">
-            {" "}
+          <div className="h-full   w-3/5 md:w-2/5 pt-36 md:pt-20  flex flex-col  md:[&>*]:h-10 [&>*]:h-20 bg-main-dark ">
             <motion.button
+              onClick={() => scrollTo("projects")}
               whileHover={{ x: 10, transition: { duration: 0.3 } }}
-              className="text-main-yellow"
+              className="text-main-yellow md:self-start md:ml-8"
             >
-              <a href="/#projects">Projects</a>
+              Projects
             </motion.button>
             <motion.button
               whileHover={{ x: 10, transition: { duration: 0.3 } }}
-              className="text-main-yellow"
+              className="text-main-yellow  md:self-start md:ml-8"
             >
               About
             </motion.button>
             <motion.button
+              onClick={() => scrollTo("contact")}
               whileHover={{ x: 10, transition: { duration: 0.3 } }}
-              className="text-main-yellow"
+              className="text-main-yellow  md:self-start  md:ml-8"
             >
               Contact
             </motion.button>
             {/* social media link */}
             <div className="social self-end flex mx-auto  gap-5 text-main-yellow md:hidden">
               <div className="w-4 h-4 rounded-full   ">
-                <AiFillFacebook size={25} />
+                <a
+                  href="https://wa.me/081210736769?text=hello"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <AiOutlineWhatsApp size={25} />
+                </a>
               </div>
               <div className="w-4 h-4 rounded-full  ">
                 <AiFillLinkedin size={25} />

@@ -2,38 +2,39 @@ import { AiFillGithub } from "react-icons/ai";
 import CustomButton from "../Buttons/customBtnMain";
 import StaticBtn from "../Buttons/staticBtn";
 import { useState } from "react";
+import Carousel from "../carousel";
+// import { Carousel } from "react-responsive-carousel";
 export type Project = {
   name: string;
   stacks: string[];
   description: string;
   imgs: string[];
-  url: string;
+  url?: string;
+  gitHub?: string;
+  features?: string[];
 };
+
 const ProjectCard = ({ project, id }: { project: Project; id: number }) => {
-  const { description, imgs, name, stacks, url } = project;
+  const { description, imgs, name, stacks, url, gitHub } = project;
   const [isShow, setIsShow] = useState(false);
 
   return (
     <section className="space-y-5" key={id}>
-      <h1 className=" text-xl font-thin ">{name}</h1>
+      <h1 className=" text-xl font-thin ">
+        {id + 1}. {name}
+      </h1>
       <div className="flex justify-center gap-5 flex-wrap w-full">
         {stacks?.map((name, i) => (
           <StaticBtn key={i}>{name}</StaticBtn>
         ))}
       </div>
       <p className="text-justify">
-        {isShow ? description : description.slice(0, 100) + " . . ."}
+        {isShow ? description : description.slice(0, 80) + " . . ."}
       </p>
       {isShow && (
         <>
-          {imgs?.map((url, i) => (
-            <img
-              key={i}
-              src={url}
-              alt=""
-              className="shadow-btn-shadow w-full max-h-xl "
-            />
-          ))}
+          <Carousel images={imgs} />
+
           <div className="navigate flex gap-2">
             {url && (
               <CustomButton className="text-xs">
@@ -43,7 +44,9 @@ const ProjectCard = ({ project, id }: { project: Project; id: number }) => {
               </CustomButton>
             )}
             <CustomButton className="">
-              <AiFillGithub />
+              <a href={gitHub} target="_blank">
+                <AiFillGithub />
+              </a>
             </CustomButton>
           </div>
         </>
