@@ -12,7 +12,7 @@ const Main = () => {
     <div className=" mx-auto   border-t-2 border-main-dark pt-8 border-dashed  w-full space-y-5">
       <Header className="text-xl pt-[4px] block py-2">Greetings</Header>
 
-      <section className="skills text-justify justify-center  flex flex-wrap gap-4">
+      <section id="about" className="skills text-justify justify-center  flex flex-wrap gap-4">
         <p className="   ">
           My name is Atib i'am self taught web developer from Lebak Banten,
           welcome to my portfolio

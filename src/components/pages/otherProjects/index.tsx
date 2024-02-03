@@ -8,10 +8,10 @@ import { useNavigate } from "react-router-dom";
 
 const projects: Project[] = [
   {
-    name: "Social-Media-App",
+    name: "todo-app-with-firebase-auth",
     stacks: ["React", "Typesript", "Firebase", "Redux"],
     description:
-      "This project aims to develop a modern and interactive social media application leveraging the power of React, Firebase, and TypeScript. The application focuses on providing users with a seamless and engaging platform for social networking while incorporating robust functionalities and a user-friendly interface.",
+      "after confident with my frontend skill i learn some backend with firebase, so i create todo app with authentication, so user can save their todos.",
     gitHub: "https://github.com/adios35/socialMediaAppFireBase",
     url: "https://social-media-app-fire-base.vercel.app",
     imgs: [
@@ -33,7 +33,20 @@ const projects: Project[] = [
       "https://res.cloudinary.com/dhvra0tqf/image/upload/v1700838691/artgpr5jraqsxhimb6zr.png",
       "https://res.cloudinary.com/dhvra0tqf/image/upload/v1700838591/oj6pq48ahxg8t2kokqom.png",
     ],
-  },
+  }, {
+    name: "rick-and -morthy-api",
+    stacks: ["React", "Typesript", "Firebase", "Redux"],
+    description:
+      "i create this project while i learning asyncronous programming with javascript, i also learn pagination and dynamic routing",
+    url: "https://e-commerce-firebase.netlify.app/",
+    gitHub: "",
+    imgs: [
+      "https://res.cloudinary.com/dhvra0tqf/image/upload/v1700838692/ltp0sydo6k93orbinr6y.png",
+      "https://res.cloudinary.com/dhvra0tqf/image/upload/v1700838692/ltp0sydo6k93orbinr6y.png",
+      "https://res.cloudinary.com/dhvra0tqf/image/upload/v1700838691/artgpr5jraqsxhimb6zr.png",
+      "https://res.cloudinary.com/dhvra0tqf/image/upload/v1700838591/oj6pq48ahxg8t2kokqom.png",
+    ],
+  }
 ];
 
 const OtherProject = () => {
@@ -51,7 +64,7 @@ const OtherProject = () => {
     <AnimatePresence>
       <div className="w-full space-y-8 relative">
         <motion.div
-          style={{ top: 16, left: 230, position: "fixed", zIndex: 99 }}
+          style={{ top: 17, left: 230, position: "fixed", zIndex: 99 }}
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
           exit={{ scale: 0 }}

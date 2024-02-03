@@ -7,15 +7,15 @@ import Header from "../../typoghrapy/Header";
 const projects: Project[] = [
   {
     name: "Social-Media-App",
-    stacks: ["React", "Typesript", "Firebase", "Redux"],
+    stacks: ["React", "Typesript", "Firebase", "Redux", "Tailwindcss"],
     description:
       "This project aims to develop a modern and interactive social media application leveraging the power of React, Firebase, and TypeScript. The application focuses on providing users with a seamless and engaging platform for social networking while incorporating robust functionalities and a user-friendly interface.",
     gitHub: "https://github.com/adios35/socialMediaAppFireBase",
     url: "https://social-media-app-fire-base.vercel.app",
     imgs: [
-      "https://res.cloudinary.com/dhvra0tqf/image/upload/v1700575610/projects/wmxdq6xl6d1gz02fphbz.png",
-      "https://res.cloudinary.com/dhvra0tqf/image/upload/v1700575608/projects/vi43mlov0ns1rkrl7jrl.png",
-      "https://res.cloudinary.com/dhvra0tqf/image/upload/v1700575605/projects/y8mtonz27lewxvfwqfta.png",
+      "https://res.cloudinary.com/dhvra0tqf/image/upload/v1704549580/porto/flvxinbevgxnp0jypvti.png",
+      "https://res.cloudinary.com/dhvra0tqf/image/upload/v1706929777/kyflfvdcgsspdfwjbs5o.png",
+      "https://res.cloudinary.com/dhvra0tqf/image/upload/v1706929776/nhqu8lpzq8hmkowhq8bc.png",
     ],
   },
   {
@@ -31,7 +31,20 @@ const projects: Project[] = [
       "https://res.cloudinary.com/dhvra0tqf/image/upload/v1700838691/artgpr5jraqsxhimb6zr.png",
       "https://res.cloudinary.com/dhvra0tqf/image/upload/v1700838591/oj6pq48ahxg8t2kokqom.png",
     ],
-  },
+  }, {
+    name: "fullstack-blog-app(mern + jwt)",
+    stacks: ["React", "Typesript", "Tailwindcss", "Jwt", "Express", "NodeJs"],
+    description:
+      "this is my first fullstack app, and this is one of my project based learning while learning backend with express as backend database with mongo db , the hardest challange i faced is creating authentication with jwt",
+    url: "https://incredible-axolotl-710e61.netlify.app/",
+    gitHub: "",
+    imgs: [
+      "https://res.cloudinary.com/dhvra0tqf/image/upload/v1705311715/porto/swsym7mk8gskhhmdnqfj.png",
+      "https://res.cloudinary.com/dhvra0tqf/image/upload/v1705311716/porto/ccjjde1fyglzqy9nl4qx.png",
+      "https://res.cloudinary.com/dhvra0tqf/image/upload/v1704549833/v5r5pc5g8jikt7rbpstj.png",
+      "https://res.cloudinary.com/dhvra0tqf/image/upload/v1705311715/porto/kjiat5fbcior6e93bxlm.png",
+    ],
+  }
 ];
 
 const Projects = () => {
