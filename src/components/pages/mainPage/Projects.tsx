@@ -26,10 +26,9 @@ const projects: Project[] = [
     url: "https://e-commerce-firebase.netlify.app/",
     gitHub: "",
     imgs: [
-      "https://res.cloudinary.com/dhvra0tqf/image/upload/v1700838692/ltp0sydo6k93orbinr6y.png",
-      "https://res.cloudinary.com/dhvra0tqf/image/upload/v1700838692/ltp0sydo6k93orbinr6y.png",
-      "https://res.cloudinary.com/dhvra0tqf/image/upload/v1700838691/artgpr5jraqsxhimb6zr.png",
-      "https://res.cloudinary.com/dhvra0tqf/image/upload/v1700838591/oj6pq48ahxg8t2kokqom.png",
+      "https://res.cloudinary.com/dhvra0tqf/image/upload/v1704549579/porto/v1tdfidm24k8zw9v6agp.png",
+      "https://res.cloudinary.com/dhvra0tqf/image/upload/v1704549579/porto/q8ty9ymgjp5vnikyt0d7.png",
+      "https://res.cloudinary.com/dhvra0tqf/image/upload/v1704549578/porto/aqexqcsajgo2hb675vr7.png",
     ],
   }, {
     name: "fullstack-blog-app(mern + jwt)",

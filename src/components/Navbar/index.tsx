@@ -43,7 +43,9 @@ const Navbar = () => {
                 "shadow-btn-hover mr-[4px] bg-main-yellow text-main-dark shadow-main-yellow"
                 }`}
             >
+              <a href="https://www.linkedin.com/in/atib-atib-65a974252/" target="_blank">
               <AiFillLinkedin size={26} />
+              </a>
             </CustomButton>
             <CustomButton
               className={`text-sm ${isDropdownOpen &&

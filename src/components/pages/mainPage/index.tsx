@@ -15,13 +15,11 @@ const Main = () => {
       <section id="about" className="skills text-justify justify-center  flex flex-wrap gap-4">
         <p className="   ">
           My name is Atib i'am self taught web developer from Lebak Banten,
-          welcome to my portfolio
+          welcome to my portfolio.
         </p>
         {showMore && (
           <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius, qui!
-            Quod iure minima impedit fuga minus quae debitis quo libero deleniti
-            veritatis saepe inventore maxime, magnam, facere quia! Hic, unde.
+            i am an intpt who love tech and cup of coffe
           </p>
         )}
         <CustomButton onClick={() => setShowMore((pre) => !pre)}>

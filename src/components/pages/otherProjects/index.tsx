@@ -11,13 +11,14 @@ const projects: Project[] = [
     name: "todo-app-with-firebase-auth",
     stacks: ["React", "Typesript", "Firebase", "Redux"],
     description:
-      "after confident with my frontend skill i learn some backend with firebase, so i create todo app with authentication, so user can save their todos.",
+          "I have create my own todo app in my local machine and i about to put that in my portfolio, but i realize it was too ordinary and it was too dumb if i put that thing on my portfolio, so i need to make it little bit differnt, i was thinking it will be nice if user can register/login to the app and store their todo, but i have zero knowledge of backend and it was too overwhelming to learn that at that time and chatgpt didnt even born yet, after some research i found firebase, a free ready to go backend from google and the best thing is it already have authentication system out of the box. the learning curve isnt really that hard but quite challanging, after some googling and youtube i've finaly manage to build that aplication, i know its not really that impressive, but it was gate for me to little understanding of backend which is i learn in the next project",
     gitHub: "https://github.com/adios35/socialMediaAppFireBase",
-    url: "https://social-media-app-fire-base.vercel.app",
+    url: "https://todofirebase-app.netlify.app/",
     imgs: [
-      "https://res.cloudinary.com/dhvra0tqf/image/upload/v1700575610/projects/wmxdq6xl6d1gz02fphbz.png",
-      "https://res.cloudinary.com/dhvra0tqf/image/upload/v1700575608/projects/vi43mlov0ns1rkrl7jrl.png",
-      "https://res.cloudinary.com/dhvra0tqf/image/upload/v1700575605/projects/y8mtonz27lewxvfwqfta.png",
+      "https://res.cloudinary.com/dhvra0tqf/image/upload/v1705379331/porto/nyadf9hnx0l9j766dawk.png",
+      "https://res.cloudinary.com/dhvra0tqf/image/upload/v1705379331/porto/jin13oczljk1kxxagmxy.png",
+      "https://res.cloudinary.com/dhvra0tqf/image/upload/v1705379331/porto/ee2aeuz8tzcbpqjw3hkc.png",
+      "https://res.cloudinary.com/dhvra0tqf/image/upload/v1705379331/porto/xgkr18zegdz3gbrnxtsi.png",
     ],
   },
   {
@@ -33,12 +34,13 @@ const projects: Project[] = [
       "https://res.cloudinary.com/dhvra0tqf/image/upload/v1700838691/artgpr5jraqsxhimb6zr.png",
       "https://res.cloudinary.com/dhvra0tqf/image/upload/v1700838591/oj6pq48ahxg8t2kokqom.png",
     ],
-  }, {
-    name: "rick-and -morthy-api",
-    stacks: ["React", "Typesript", "Firebase", "Redux"],
+  },
+  {
+    name: "my-first-website",
+    stacks: ["Html", "Css", "Sass", "Javacsript"],
     description:
-      "i create this project while i learning asyncronous programming with javascript, i also learn pagination and dynamic routing",
-    url: "https://e-commerce-firebase.netlify.app/",
+      "this the first website that i create along with free free bootcamp provided by my goverment",
+    url: "https://my-first-project-course-website.netlify.app/",
     gitHub: "",
     imgs: [
       "https://res.cloudinary.com/dhvra0tqf/image/upload/v1700838692/ltp0sydo6k93orbinr6y.png",
@@ -46,7 +48,7 @@ const projects: Project[] = [
       "https://res.cloudinary.com/dhvra0tqf/image/upload/v1700838691/artgpr5jraqsxhimb6zr.png",
       "https://res.cloudinary.com/dhvra0tqf/image/upload/v1700838591/oj6pq48ahxg8t2kokqom.png",
     ],
-  }
+  },
 ];
 
 const OtherProject = () => {
