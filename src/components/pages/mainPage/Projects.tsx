@@ -52,7 +52,8 @@ const Projects = () => {
     <>
       <hr className="divider my-8 border-t-2 border-dashed mx-auto  border-main-dark" />
       <section id="projects">
-        <Header className="text-xl pt-[4px]">Projects</Header>
+        <Header className="text-xl pt-[4px] block py-2">Projects</Header>
+
       </section>
       {projects.map((project, i) => (
         <ProjectCard key={i} project={project} id={i} />
