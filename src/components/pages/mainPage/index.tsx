@@ -35,7 +35,7 @@ const Main = () => {
       <section className="skills">
         <Header id="skills" className="text-xl pt-[4px] block py-2">My Skills</Header>
         <Collapse title="frontend" skills={["Html", "Css", "Javascript", "Sass", "Typescript", "React", "Tailwindcss", "NextJs"]} />
-        <Collapse title="Backend" skills={["Html", "Css", "Javascript", "Sass", "Typescript", "React", "Tailwindcss", "NextJs"]} />
+        <Collapse title="Backend" skills={["NodeJs", "ExpressJs", "Mysql", "MongoDb", "PrismaJs", "Authentication", "Cookie", "Session", "php( currently learning )", "Laravel(currently learning)"]} />
       </section>
       {/* projects */}
       <Projects />

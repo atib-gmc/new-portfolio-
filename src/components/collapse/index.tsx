@@ -37,7 +37,7 @@ export default function Collapse(props: props) {
         <BiRightArrow className={`${show ? "rotate-[90deg]" : "rotate-[0deg]"} -mt-[4px]  duration-300 transition-all`} />
         <span className="text-xl block font-thin ">{props.title}</span>
       </motion.button>
-      <motion.ul transition={{ duration: .3 }} className='flex gap-3 flex-wrap duration-300 transition-all'>
+      <motion.ul className='flex gap-3 flex-wrap duration-300 transition-all'>
         <AnimatePresence mode='sync'>
           {show && props.skills.map((skill, i) => (
             <motion.li variants={variants} initial="initial" animate="animate" exit="exit" custom={i} key={i}>

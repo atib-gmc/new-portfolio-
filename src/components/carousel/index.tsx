@@ -1,5 +1,5 @@
 // Carousel.js
-
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { useState } from "react";
 import { motion } from "framer-motion";
 
@@ -36,7 +36,7 @@ const Carousel = ({ images }: { images: string[] }) => {
             id="Layer_1"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
-            // xml:space="preserve"
+          // xml:space="preserve"
           >
             <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
             <g

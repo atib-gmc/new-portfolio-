@@ -3,6 +3,7 @@ import CustomButton from "../Buttons/customBtnMain";
 import StaticBtn from "../Buttons/staticBtn";
 import { useState } from "react";
 import Carousel from "../carousel";
+import Carousel2 from "../carousel/Carousel2";
 // import { Carousel } from "react-responsive-carousel";
 export type Project = {
   name: string;
@@ -33,7 +34,7 @@ const ProjectCard = ({ project, id }: { project: Project; id: number }) => {
       </p>
       {isShow && (
         <>
-          <Carousel images={imgs} />
+          <Carousel2 images={imgs} />
 
           <div className="navigate flex gap-2">
             {url && (
