@@ -11,8 +11,8 @@ const projects: Project[] = [
     description:
       "This project aims to develop a modern and interactive social media application leveraging the power of React, Firebase, and TypeScript. The application focuses on providing users with a seamless and engaging platform for social networking while incorporating robust functionalities and a user-friendly interface.",
     gitHub: "https://github.com/adios35/socialMediaAppFireBase",
-    url: "https://social-media-app-fire-base.vercel.app",
-    features: [
+    url: "https://social-media-app-fire-base.vercel.app", 
+       features: [
       "responsive mobile first",
       "authentication",
       "image upload",
@@ -31,8 +31,8 @@ const projects: Project[] = [
     description:
       "This eCommerce project with user-friendly interface powered by React Typescript and Firebase. It encompasses essential functionalities like cart management, user registration, and login features. With real-time updates from Firebase, this platform ensures interactive UI, providing a seamless shopping experience for all users.",
     url: "https://e-commerce-firebase.netlify.app/",
-    gitHub: "",
-    features: [
+    gitHub: "", 
+     features: [
       "fully functional shopping cart ",
       "responsive",
       "dark mode",
@@ -44,19 +44,18 @@ const projects: Project[] = [
       "https://res.cloudinary.com/dhvra0tqf/image/upload/v1704549579/porto/q8ty9ymgjp5vnikyt0d7.png",
       "https://res.cloudinary.com/dhvra0tqf/image/upload/v1704549578/porto/aqexqcsajgo2hb675vr7.png",
     ],
-  },
-  {
+  }, {
     name: "fullstack-blog-app(mern + jwt)",
     stacks: ["React", "Typesript", "Tailwindcss", "Jwt", "Express", "NodeJs"],
     description:
       "this is my first fullstack app, and this is one of my project based learning while learning backend with express as backend database with mongo db , the hardest challange i faced is creating authentication with jwt",
+
     url: "https://incredible-axolotl-710e61.netlify.app/",
-    gitHub: "",
-    features: [
+     gitHub: "",   features: [
       "authentication with jwt",
       "Crud",
       "responsive mobile first",
-      "comment",
+      "comment the article",
     ],
     imgs: [
       "https://res.cloudinary.com/dhvra0tqf/image/upload/v1705311715/porto/swsym7mk8gskhhmdnqfj.png",
@@ -64,7 +63,7 @@ const projects: Project[] = [
       "https://res.cloudinary.com/dhvra0tqf/image/upload/v1704549833/v5r5pc5g8jikt7rbpstj.png",
       "https://res.cloudinary.com/dhvra0tqf/image/upload/v1705311715/porto/kjiat5fbcior6e93bxlm.png",
     ],
-  },
+  }
 ];
 
 const Projects = () => {
@@ -73,7 +72,7 @@ const Projects = () => {
     <>
       <hr className="divider my-8 border-t-2 border-dashed mx-auto  border-main-dark" />
       <section id="projects">
-        <Header className="text-xl pt-[4px] block py-2">Projects</Header>
+        <Header className="text-xl pt-[4px]">Projects</Header>
       </section>
       {projects.map((project, i) => (
         <ProjectCard key={i} project={project} id={i} />
@@ -83,6 +82,6 @@ const Projects = () => {
       </CustomButton>
     </>
   );
-};
+}     
 
 export default Projects;

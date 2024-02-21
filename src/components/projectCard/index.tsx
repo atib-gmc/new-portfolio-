@@ -1,10 +1,9 @@
 import { AiFillGithub } from "react-icons/ai";
+import { motion, AnimatePresence } from "framer-motion";
 import CustomButton from "../Buttons/customBtnMain";
 import StaticBtn from "../Buttons/staticBtn";
 import { useState } from "react";
-import Carousel from "../carousel";
 import Carousel2 from "../carousel/Carousel2";
-// import { Carousel } from "react-responsive-carousel";
 export type Project = {
   name: string;
   stacks: string[];
@@ -16,7 +15,7 @@ export type Project = {
 };
 
 const ProjectCard = ({ project, id }: { project: Project; id: number }) => {
-  const { description, imgs, name, stacks, url, gitHub } = project;
+  const { description, features, imgs, name, stacks, url, gitHub } = project;
   const [isShow, setIsShow] = useState(false);
 
   return (
@@ -25,33 +24,48 @@ const ProjectCard = ({ project, id }: { project: Project; id: number }) => {
         {id + 1}. {name}
       </h1>
       <div className="flex justify-center gap-5 flex-wrap w-full">
-        {stacks?.map((name, i) => (
-          <StaticBtn key={i}>{name}</StaticBtn>
-        ))}
+        {stacks?.map((name, i) => <StaticBtn key={i}>{name}</StaticBtn>)}
       </div>
       <p className="text-justify">
         {isShow ? description : description.slice(0, 80) + " . . ."}
       </p>
-      {isShow && (
-        <>
-          <Carousel2 images={imgs} />
+      <AnimatePresence>
+        {isShow && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ staggerChildren: 0.3, delayChildren: 0.2 }}
+          >
+            {features && (
+              <>
+                <ul className="text-sm text-start list-bullet">
+                  <h4 className="text-lg  text-start">features :</h4>
+                  {features.map((feature) => (
+                    <li>{feature}</li>
+                  ))}
+                </ul>
+              </>
+            )}
+            <Carousel2 images={imgs} />
 
-          <div className="navigate flex gap-2">
-            {url && (
-              <CustomButton className="text-xs">
-                <a href={url} target="_blank">
-                  Visit
+            <div className="navigate flex gap-2">
+              {url && (
+                <CustomButton className="text-xs">
+                  <a href={url} target="_blank">
+                    Visit
+                  </a>
+                </CustomButton>
+              )}
+              <CustomButton className="">
+                <a href={gitHub} target="_blank">
+                  <AiFillGithub />
                 </a>
               </CustomButton>
-            )}
-            <CustomButton className="">
-              <a href={gitHub} target="_blank">
-                <AiFillGithub />
-              </a>
-            </CustomButton>
-          </div>
-        </>
-      )}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
       <CustomButton
         onClick={() => setIsShow((pre) => !pre)}
         className="text-xs"
