@@ -38,31 +38,31 @@ const Navbar = () => {
             <AiOutlineMenu />
           </CustomButton>
           <div className="flex">
-            <CustomButton
-              className={`text-sm ${isDropdownOpen &&
-                "shadow-btn-hover mr-[4px] bg-main-yellow text-main-dark shadow-main-yellow"
-                }`}
-            >
-              <a href="https://www.linkedin.com/in/atib-atib-65a974252/" target="_blank">
-              <AiFillLinkedin size={26} />
-              </a>
-            </CustomButton>
-            <CustomButton
-              className={`text-sm ${isDropdownOpen &&
-                "shadow-btn-hover  bg-main-yellow text-main-dark shadow-main-yellow"
-                }`}
-            >
-              <a href="https://github.com/adios35" target="_blank">
+            <a href="https://www.linkedin.com/in/atib-atib-65a974252/" target="_blank">
+              <CustomButton
+                className={`text-sm ${isDropdownOpen &&
+                  "shadow-btn-hover mr-[4px] bg-main-yellow text-main-dark shadow-main-yellow"
+                  }`}
+              >
+                <AiFillLinkedin size={26} />
+              </CustomButton>
+            </a>
+            <a href="https://github.com/adios35" target="_blank">
+              <CustomButton
+                className={`text-sm ${isDropdownOpen &&
+                  "shadow-btn-hover  bg-main-yellow text-main-dark shadow-main-yellow"
+                  }`}
+              >
                 <AiFillGithub size={26} />
-              </a>
-            </CustomButton>
+              </CustomButton>
+            </a>
           </div>
         </div>
         {/* Mobile Menu Button */}
         <motion.div
           // animate={{ x: isDropdownOpen ? -390 : -1000 }}
           className={` flex  m-0 absolute inset-0 ${isDropdownOpen ? "w-screen " : "w-0 "
-            } -top-4 -left-4 -z-10 duration-300 h-screen overflow-hidden`}
+            } -top-4  -left-4 -z-10 duration-300 h-screen overflow-hidden`}
         >
           <div className="h-full   w-3/5 md:w-2/5 pt-36 md:pt-20  flex flex-col  md:[&>*]:h-10 [&>*]:h-20 bg-main-dark ">
             <motion.button

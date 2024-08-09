@@ -42,26 +42,27 @@ const ProjectCard = ({ project, id }: { project: Project; id: number }) => {
                 <ul className="text-sm text-start list-bullet">
                   <h4 className="text-lg  text-start">features :</h4>
                   {features.map((feature) => (
-                    <li>{feature}</li>
+                    <li>- {feature}</li>
                   ))}
                 </ul>
               </>
             )}
+            <div className="h-4"></div>
             <Carousel2 images={imgs} />
 
             <div className="navigate flex gap-2">
               {url && (
-                <CustomButton className="text-xs">
-                  <a href={url} target="_blank">
+                <a href={url} target="_blank">
+                  <CustomButton className="text-xs">
                     Visit
-                  </a>
-                </CustomButton>
-              )}
-              <CustomButton className="">
-                <a href={gitHub} target="_blank">
-                  <AiFillGithub />
+                  </CustomButton>
                 </a>
-              </CustomButton>
+              )}
+              <a href={gitHub} target="_blank">
+                <CustomButton className="">
+                  <AiFillGithub />
+                </CustomButton>
+              </a>
             </div>
           </motion.div>
         )}

@@ -3,17 +3,9 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/footer";
 import Greeting from "./components/pages/greeting";
 import Main from "./components/pages/mainPage";
-// import { useEffect, useState } from "react";
 import OtherProject from "./components/pages/otherProjects";
 
 const App = () => {
-  // const [load, setLoad] = useState(false);
-
-  // useEffect(() => {
-  //   window.addEventListener("load", () => {
-  //     setLoad(true);
-  //   });
-  // }, []);
 
   return (
     <>

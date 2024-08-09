@@ -7,7 +7,7 @@ import Donut from "react-spinning-donut";
 
 const Greeting = () => {
   const text = useTypewriter({
-    words: ["Frontend Developer", "Backend Enginer", "and Designer"],
+    words: ["Frontend Developer", "Backend developer", "web designer", "and game developer"],
     loop: true,
   });
 
