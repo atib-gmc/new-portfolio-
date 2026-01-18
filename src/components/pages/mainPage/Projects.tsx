@@ -1,8 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import CustomButton from "../../Buttons/customBtnMain";
 import ProjectCard, { Project } from "../../projectCard";
-import Header from "../../typoghrapy/Header";
-import { motion, AnimatePresence } from "framer-motion";
 
 
 

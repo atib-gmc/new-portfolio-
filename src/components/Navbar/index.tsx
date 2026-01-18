@@ -5,13 +5,19 @@ import {
   AiFillLinkedin,
   AiFillGithub,
   AiOutlineWhatsApp,
+  AiFillHome,
 } from "react-icons/ai";
 import { motion } from "framer-motion";
 import CustomButton from "../Buttons/customBtnMain";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const location = useLocation();
+
+  const isNotHome = location.pathname !== "/";
+
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -25,7 +31,7 @@ const Navbar = () => {
   }
 
   return (
-    <nav className="navbar fixed z-20  p-4  w-full">
+    <nav className="navbar fixed z-20   p-4  w-full">
       <div className="container px-10 relative mx-auto flex  justify-between items-center">
         {/* button */}
         <div className="cta-left  flex gap-3">
@@ -47,7 +53,7 @@ const Navbar = () => {
                 <AiFillLinkedin size={26} />
               </CustomButton>
             </a>
-            <a href="https://github.com/adios35" target="_blank">
+            <a href="https://github.com/atib-gmc/" target="_blank">
               <CustomButton
                 className={`text-sm ${isDropdownOpen &&
                   "shadow-btn-hover  bg-main-yellow text-main-dark shadow-main-yellow"
@@ -56,15 +62,20 @@ const Navbar = () => {
                 <AiFillGithub size={26} />
               </CustomButton>
             </a>
+            {isNotHome && (
+              <CustomButton className="ml-2" onClick={() => { navigate("/"); setIsDropdownOpen(false) }}>
+                <AiFillHome size={26} />
+              </CustomButton>
+            )}
           </div>
         </div>
         {/* Mobile Menu Button */}
         <motion.div
           // animate={{ x: isDropdownOpen ? -390 : -1000 }}
-          className={` flex  m-0 absolute inset-0 ${isDropdownOpen ? "w-screen " : "w-0 "
-            } -top-4  -left-4 -z-10 duration-300 h-screen overflow-hidden`}
+          className={`scale-x-105 flex  m-0 absolute w-screen w-full  left-0 scale-x-105  ${isDropdownOpen ? "-translate-x-24" : "  -translate-x-[1400px]"
+            } -top-4   -z-10 duration-300 h-screen overflow-hidden`}
         >
-          <div className="h-full   w-3/5 md:w-2/5 pt-36 md:pt-20  flex flex-col  md:[&>*]:h-10 [&>*]:h-20 bg-main-dark ">
+          <div className="h-full w-full  w-3/5 md:w-2/5 pt-36 md:pt-20  pl-20 flex flex-col  md:[&>*]:h-10 [&>*]:h-20 bg-main-dark ">
             <motion.button
               onClick={() => scrollTo("projects")}
               whileHover={{ x: 10, transition: { duration: 0.3 } }}
