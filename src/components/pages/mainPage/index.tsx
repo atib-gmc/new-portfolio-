@@ -3,15 +3,39 @@ import { motion, AnimatePresence } from "framer-motion";
 import CustomButton from "../../Buttons/customBtnMain";
 // import StaticBtn from "../../Buttons/staticBtn";
 import Header from "../../typoghrapy/Header";
-import Projects from "./Projects";
 import Collapse from "../../collapse";
+import ProjectsWeb from "./Projects";
+import ProjectsGame from "./projectsGame";
 
 const Main = () => {
   const [showMore, setShowMore] = useState(false);
   document.title = "Welcome to my portfolio | Home ";
+  const [selected, setSelected] = useState("web");
+  const [direction, setDirection] = useState<any>(1);
+
+  const changeTab = (value: any) => {
+    setDirection(value === "web" ? -1 : 1);
+    setSelected(value);
+  };
+
+  const variants = {
+    enter: (direction: any) => ({
+      x: direction > 0 ? 100 : -100,
+      opacity: 0,
+    }),
+    center: {
+      x: 0,
+      opacity: 1,
+    },
+    exit: (direction: any) => ({
+      x: direction > 0 ? -100 : 100,
+      opacity: 0,
+    }),
+  };
+
 
   return (
-    <div className=" mx-auto   border-t-2 border-main-dark pt-8 border-dashed  w-full space-y-5">
+    <div className=" mx-auto    border-t-2 border-main-dark pt-8 border-dashed  w-full space-y-5">
       <Header id="about" className="text-xl pt-[4px] block py-2">
         Greetings
       </Header>
@@ -29,15 +53,14 @@ const Main = () => {
               exit={{ height: 0, opacity: 0 }}
               transition={{ staggerChildren: 0.3, delayChildren: 0.2 }}
             >
-              I am a fullstack developer but i more focused on frontend developer,i
-              start my web dev journey about two year ago and start more focused
-              in early this year, despite bing self taught, i have manage teach
-              myself to become full stack web developer, i can create beautifull
-              and well animated responsive frontend app and also create backend
-              api with expressJs and php/laravel, i mainly using react and nextjs and sometimes
-              using vanila for my project and i love using framer-motion and Shadcn for the
-              ui and animation, for backend i mainly use expressjs and laravel postgresql for
-              database. I also can create game using godot engine with gdscript
+              I am a full-stack developer with a strong focus on frontend development. I started my web development journey around two years ago and became more seriously focused earlier this year. Despite being self-taught, I have built a solid foundation as a full-stack web developer.
+
+              On the frontend, I specialize in building clean, responsive, and well-animated user interfaces using React and Next.js. I enjoy working with Tailwind CSS, Framer Motion, and shadcn/ui to create polished UI and smooth animations. I also use vanilla JavaScript when a project requires a lighter or simpler approach.
+
+              On the backend, I have experience building APIs using Express.js and working with databases such as PostgreSQL and MySQL. I often use Supabase for rapid development and scalable backend solutions.
+
+              In addition to web development, I also create games using the Godot engine with GDScript, which helps me sharpen my problem-solving skills and creativity.
+
             </motion.p>
           )}
         </AnimatePresence>
@@ -69,6 +92,7 @@ const Main = () => {
             "Redux",
             "Zustand",
             "ShadCn",
+            "ElectronJs (desktop app)",
           ]}
         />
         <Collapse
@@ -83,14 +107,40 @@ const Main = () => {
             "MongoDb",
             "PrismaJs",
             "Authentication",
-            "php",
-            "Laravel",
-            "Go ( still learning )",
+          ]}
+        />
+
+        <Collapse
+          title="Design & Creative Tools"
+          skills={[
+            "Figma",
+            "Aseprite",
+            "Clip Studio Paint",
+            "Affinity"
           ]}
         />
       </section>
       {/* projects */}
-      <Projects />
+
+      <nav className="w-full flex [&>*]:flex-1">
+        <button onClick={() => changeTab("web")}> <Header className={`text-xl pt-[4px] block py-2 w-full ${selected === "web" ? "text-main-yellow bg-main-dark" : "text-main-dark bg-main-yellow"}`}>Web Projects</Header></button>
+        <button onClick={() => changeTab("game")}> <Header className={`text-xl  pt-[4px] block py-2 w-full ${selected === "game" ? "text-main-yellow bg-main-dark" : "text-main-dark bg-main-yellow"}`}>Game Projects</Header></button>
+      </nav>
+      <AnimatePresence mode="wait" custom={direction}>
+        <motion.div
+          key={selected}
+          custom={direction}
+          variants={variants}
+          initial="enter"
+          animate="center"
+          exit="exit"
+          transition={{ duration: 0.1, ease: "easeInOut" }}
+        >
+          {selected === "web" ? <ProjectsWeb /> : <ProjectsGame />}
+        </motion.div>
+      </AnimatePresence>
+
+
     </div>
   );
 };

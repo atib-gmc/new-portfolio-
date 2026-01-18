@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import CustomButton from "../../Buttons/customBtnMain";
 import ProjectCard, { Project } from "../../projectCard";
 import Header from "../../typoghrapy/Header";
+import { motion, AnimatePresence } from "framer-motion";
 
 
 
@@ -24,28 +25,6 @@ const projects: Project[] = [
       "https://res.cloudinary.com/dhvra0tqf/image/upload/v1704549580/porto/flvxinbevgxnp0jypvti.png",
       "https://res.cloudinary.com/dhvra0tqf/image/upload/v1706929777/kyflfvdcgsspdfwjbs5o.png",
       "https://res.cloudinary.com/dhvra0tqf/image/upload/v1706929776/nhqu8lpzq8hmkowhq8bc.png",
-    ],
-  },
-  {
-    name: "farm game project (work in progress)",
-    stacks: ["Gdscript", "Godot"],
-    description:
-      "this project made with godot and language called gdscript ,making game help me alot with programming since it lot harder than frontend in my opinion, this project still under development it has feature like combat mechanic, inventory, experience and state machine more feature will added in near future. you can try this game for free on itch.io link in down bellow",
-    url: "https://atib-gmc.itch.io/project-farm",
-    gitHub: "https://github.com/atib-gmc/portfolio-game-version-", features: [
-      "smart ai enemy",
-      "State machine",
-      "combat system",
-      "health system",
-      "level up system",
-      "inventory system",
-      "interactive ui",
-      "complex farming system ( in progress... )",
-    ],
-    imgs: [
-      "https://res.cloudinary.com/dhvra0tqf/image/upload/v1723083304/godot/dkhkyv5ihqn7wezqjok9.png",
-      "https://res.cloudinary.com/dhvra0tqf/image/upload/v1723083304/godot/lutmlqmg63yoq23v7sdc.png",
-      "https://res.cloudinary.com/dhvra0tqf/image/upload/v1723083303/godot/qqshrnqzdhxiyaleb0x4.png",
     ],
   },
   {
@@ -88,52 +67,29 @@ const projects: Project[] = [
     ],
   },
   {
-    name: "Cave adventure ",
-    stacks: ["Godot", "Gdscript"],
-    description:
-      "this is my first godot game after month of learning it maybe it simple game kill all enemy and you won, sound simple but it complex and help me alot to understand some concept in programing like composition and inheritance",
-    url: "https://atib-gmc.itch.io/cave-adventure",
-    gitHub: "", features: [
-      "combat system",
-      "health system",
-      "smart ai enemy",
-      "state machine",
+    name: "Plant vs Brainrot - restock (Whatsapp Bot) ",
+    stacks: ["NodeJs", "Express", "Whatsapp-web.js", "discord.js"],
+    description: "this is whatsapp bot that redirect restock seed from official plant vs brainrot discord to whatsapp channel, this bot will only show good seed and exclude bad seed, and it will update in realtime",
+    url: "https://whatsapp.com/channel/0029VbBAYkdEKyZB343G4n2J",
+    gitHub: "",
+    features: [
+      "redirect restock seed from official plant vs brainrot discord to whatsapp channel",
+      "this boy will pnly show good seed and exclude bad seed",
+      "realtime update",
     ],
     imgs: [
-      "https://res.cloudinary.com/dhvra0tqf/image/upload/v1723085718/godot/mrlchbeswfybwgqy2lab.png",
-      "https://res.cloudinary.com/dhvra0tqf/image/upload/v1723085717/godot/vrfptfxjq9iv41uzd4nq.png",
-      "https://res.cloudinary.com/dhvra0tqf/image/upload/v1723085717/godot/sxotuvcuexwbgrzo3ldx.png",
-    ],
-  },
-  {
-    name: "nextjs blog project (fullstack)",
-    stacks: ["nextjs", "postgresql", "prisma", "next-auth", "tip-tap"],
-    description:
-      "this blog project made with nextjs using prisma and postgresql and next-auth for authentication,i made blog app before using nodejs as backend and react as frontend, it take lot of time for simple aplication but this one i made with nextjs as part of my learning process, it lot faster to develop and less boilerplate especially the authentication part since i using next-auth, i use tiptap as a rich text editor and i deploy it to vercel you can visit in the link bellow ",
-    url: "https://next-blog-app-3yu6.vercel.app/",
-    gitHub: "", features: [
-      "authentication with next-auth",
-      "Crud",
-      "responsive mobile first",
-      "rich text editor",
-    ],
-    imgs: [
-      "https://res.cloudinary.com/dhvra0tqf/image/upload/v1705311715/porto/swsym7mk8gskhhmdnqfj.png",
-      "https://res.cloudinary.com/dhvra0tqf/image/upload/v1705311716/porto/ccjjde1fyglzqy9nl4qx.png",
-      "https://res.cloudinary.com/dhvra0tqf/image/upload/v1704549833/v5r5pc5g8jikt7rbpstj.png",
-      "https://res.cloudinary.com/dhvra0tqf/image/upload/v1705311715/porto/kjiat5fbcior6e93bxlm.png",
+      "https://raw.githubusercontent.com/atib-gmc/gifs-footage/refs/heads/main/Screenshot_2026-01-17-12-05-47-84.jpg",
+      "https://raw.githubusercontent.com/atib-gmc/gifs-footage/refs/heads/main/Screenshot_2026-01-17-12-05-37-64.jpg",
+      "https://raw.githubusercontent.com/atib-gmc/gifs-footage/refs/heads/main/Screenshot_2026-01-17-12-05-42-67.jpg",
     ],
   }
 ];
 
-const Projects = () => {
+const ProjectsWeb = () => {
   const navigate = useNavigate();
   return (
     <>
       <hr className="divider my-8 border-t-2 border-dashed mx-auto  border-main-dark" />
-      <section id="projects">
-        <Header className="text-xl pt-[4px]">Projects</Header>
-      </section>
       {projects.map((project, i) => (
         <ProjectCard key={i} project={project} id={i} />
       ))}
@@ -144,4 +100,4 @@ const Projects = () => {
   );
 }
 
-export default Projects;
+export default ProjectsWeb;

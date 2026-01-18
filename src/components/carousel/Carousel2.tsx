@@ -6,6 +6,7 @@ export default function Carousel2({ images }: { images: string[] }) {
     <Carousel
       autoPlay={true}
       infiniteLoop={true}
+      stopOnHover={true}
     >{images?.map((src, i) => (
       <img src={src} key={i} alt={src} />
     ))}</Carousel>

@@ -25,8 +25,8 @@ const Navbar = () => {
   }
 
   return (
-    <nav className="navbar fixed z-20  p-4 w-full">
-      <div className="container  relative mx-auto flex  justify-between items-center">
+    <nav className="navbar fixed z-20  p-4  w-full">
+      <div className="container px-10 relative mx-auto flex  justify-between items-center">
         {/* button */}
         <div className="cta-left  flex gap-3">
           <CustomButton
